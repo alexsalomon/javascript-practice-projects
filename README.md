@@ -1,2 +1,4 @@
 # javascript-projects
-A few practice projects I did on my free time to get more comfortable with the language/frameworks/libraries
+
+A variety of different applications and components created for practicing plain JavaScript.
+ 
