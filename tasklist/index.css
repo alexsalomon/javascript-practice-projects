@@ -56,6 +56,11 @@ h1 {
   font-size: 12px;
 }
 
+.tasklist__list {
+  max-height: 67%;
+  overflow: auto;
+}
+
 .button--confirm, 
 .button--confirm:focus,
 .button--confirm:visited,
