@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Montserrat Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Task List</title>
+  </head>
+  <body>
+    
+    <section class="tasklist">
+      <section class="tasklist__section tasklist__section--left">
+        <h1 class="tasklist__title">TASK LIST</h1>
+        <form action="#" method="POST">
+          <div class="tasklist__input-field input-field">
+            <input class="tasklist__add-field" id="tasklist__add-field" type="text" name="add" required>
+            <label for="tasklist__add-field">New Task</label>
+            <span class="tasklist__add-field__helper-text" data-error="Task name cannot be empty."></span>
+          </div>
+          <button class="button button--right-align button--confirm btn waves-effect waves-light">Add Task</button>
+        </form>
+      </section>
+      <section class="tasklist__section tasklist__section--right">
+        <h6 class="tasklist__subtitle">TASKS</h6>
+        <div class="tasklist__input-field input-field">
+          <input class="tasklist__filter-field" id="tasklist__filter-field" type="text" name="filter">
+          <label for="tasklist__filter-field">Filter Tasks</label>
+        </div>
+        <button class="button button--right-align button--cancel btn waves-effect waves-light">Clear Tasks</button>
+      </section>
+      <hr class="separator separator--vertical"/> <!-- Vertical Separator -->
+    </section>
+
+    <!-- Materialize JS and its dependencies (jquery) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

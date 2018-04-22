@@ -1,0 +1,77 @@
+
+html,
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #4A4A4A;
+  font-family: 'Montserrat', sans-serif;
+  color: #4A4A4A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin: 1rem 0 1.68rem 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.tasklist {
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.tasklist__section {
+  width: 49%;
+  height: 100%;
+  padding: 2em 2em;
+}
+
+.tasklist__section--left {
+  float: left;
+}
+
+.tasklist__section--right {
+  float: right;
+  display: none;
+}
+
+.separator {
+  display: none;
+}
+
+.separator--vertical {
+  width: 0;
+  height: 90%;
+  margin-top: 3.5%;
+}
+
+.tasklist__add-field__helper-text {
+  font-size: 12px;
+}
+
+.button--confirm, 
+.button--confirm:focus,
+.button--confirm:visited,
+.button--confirm:hover,
+.button--confirm:active {
+  background-color: #FF9807;
+}
+
+.button--cancel, 
+.button--cancel:focus,
+.button--cancel:visited,
+.button--cancel:hover,
+.button--cancel:active {
+  background-color: #4A4A4A;
+}
+
+.button--right-align {
+  float: right;
+}
