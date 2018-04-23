@@ -61,6 +61,10 @@ h1 {
   overflow: auto;
 }
 
+.tasklist__list-item__delete-item {
+  color: #DF520A;
+}
+
 .button--confirm, 
 .button--confirm:focus,
 .button--confirm:visited,
