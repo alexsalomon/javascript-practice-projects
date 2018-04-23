@@ -8,13 +8,23 @@ const taskList = document.querySelector('.tasklist__list');
 loadEventListeners();
 
 function loadEventListeners() {
-  addTaskForm.addEventListener('submit', addTask);
+  document.addEventListener('DOMContentLoaded', displayTasks);
+  addTaskForm.addEventListener('submit', addTaskFromInput);
   filterField.addEventListener('keyup', filterTaskList);
   clearListButton.addEventListener('click', clearListWithConfirmation);
   taskList.addEventListener('click', deleteTask);
 }
 
-function addTask(eventObject) {
+function displayTasks() {
+  let tasks = getTasksFromLocalStorage();
+  if(tasks) {
+    tasks.forEach(function(task) {
+      addTaskToTaskList(task);
+    });
+  }
+}
+
+function addTaskFromInput(eventObject) {
   eventObject.preventDefault();
 
   const addTaskField = document.querySelector('.tasklist__add-field');
@@ -22,15 +32,19 @@ function addTask(eventObject) {
   const taskName = formData.get('task-name').trim();
 
   if(taskName) {
-    const newTask = createListItemElement(taskName);
-    taskList.appendChild(newTask);
-    showTasklistListSection();
-    resetField(addTaskField);
-    updateTaskListBorder();
+    addTaskToTaskList(taskName);
     addToLocalStorage(taskName);
+    resetField(addTaskField);
   } else {
     // TODO: invalid
   }
+}
+
+function addTaskToTaskList(taskName) {
+  const newTask = createListItemElement(taskName);
+  taskList.appendChild(newTask);
+  showTasklistListSection();
+  updateTaskListBorder();
 }
 
 function deleteTask(eventObject) {
@@ -123,6 +137,10 @@ function updateTaskListBorder() {
   } else {
     taskList.style.border = '1px solid #e0e0e0';
   }
+}
+
+function getTasksFromLocalStorage() {
+  return JSON.parse(localStorage.getItem('tasks'));
 }
 
 function addToLocalStorage(taskName) {
