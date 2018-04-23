@@ -35,8 +35,6 @@ function addTaskFromInput(eventObject) {
     addTaskToTaskList(taskName);
     addToLocalStorage(taskName);
     resetField(addTaskField);
-  } else {
-    // TODO: invalid
   }
 }
 
@@ -55,7 +53,7 @@ function deleteTask(eventObject) {
       && confirm('Are you sure you want to permanently delete this task?')) {
     const listItem = targetLink.parentElement;
     listItem.remove();
-    // removeFromLocalStorage(listItem.childNodes[0]);
+    removeFromLocalStorage(listItem.childNodes[0].textContent);
     updateTaskListBorder();
   }
 }
@@ -160,7 +158,7 @@ function removeFromLocalStorage(taskName) {
   let tasks = localStorage.getItem('tasks');
   if(tasks !== null) {
     tasks = JSON.parse(tasks);
-    // tasks = tasks.filter(e => e !== taskName); //TODO: We are never able to find the element in the array
+    tasks = tasks.filter(e => e !== taskName);
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 }
