@@ -1,6 +1,7 @@
 "use strict";
 
 const addTaskForm = document.querySelector('.tasklist__add-task-form');
+const filterField = document.querySelector('.tasklist__filter-field');
 const clearListButton = document.querySelector('.tasklist__clear-button');
 const taskList = document.querySelector('.tasklist__list');
 
@@ -8,6 +9,7 @@ loadEventListeners();
 
 function loadEventListeners() {
   addTaskForm.addEventListener('submit', addTask);
+  filterField.addEventListener('keyup', filterTaskList);
   clearListButton.addEventListener('click', clearListWithConfirmation);
   taskList.addEventListener('click', deleteTask);
 }
@@ -27,7 +29,7 @@ function addTask(eventObject) {
     updateTaskListBorder();
     addToLocalStorage(taskName);
   } else {
-    // invalid
+    // TODO: invalid
   }
 }
 
@@ -47,6 +49,7 @@ function deleteTask(eventObject) {
 function clearListWithConfirmation(eventObject) {
   if(confirm("Are you sure you want to permanently delete all items in the list?")) {
     clearList();
+    resetField(filterField);
   }
 }
 
@@ -55,6 +58,23 @@ function clearList(eventObject) {
     taskList.removeChild(taskList.firstChild);
   }
   clearTasksFromLocalStorage();
+  updateTaskListBorder();
+}
+
+function filterTaskList(eventObject) {
+  const filterValue = eventObject.target.value.trim().toLowerCase();
+  const listItems = document.querySelectorAll('.tasklist__list-item');
+  let currentItemValue = '';
+
+  listItems.forEach(function(listItem) {
+    currentItemValue = listItem.firstChild.textContent;
+    if(currentItemValue.toLowerCase().indexOf(filterValue) !== -1) {
+      listItem.style.display = 'block';
+    } else {
+      listItem.style.display = 'none';
+    }
+  });
+
   updateTaskListBorder();
 }
 
