@@ -1,4 +1,5 @@
-#tasklist
+tasklist
+====
 
 A component for displaying, adding, removing and filtering tasks.
 
