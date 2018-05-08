@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="drumkit.css">
+    <meta charset="UTF-8">
+    <title>Drum Kit - by alexsalomon</title>
+</head>
+<body>
+<section class="drumkit">
+    <div class="drumkit__key-box" data-key="KeyA">
+        <kbd class="drumkit__key">A</kbd>
+        <span class="drumkit__key-sound">clap</span>
+    </div>
+    <div class="drumkit__key-box" data-key="KeyS">
+        <kbd class="drumkit__key">S</kbd>
+        <span class="drumkit__key-sound">hihat</span>
+    </div>
+    <div class="drumkit__key-box" data-key="KeyD">
+        <kbd class="drumkit__key">D</kbd>
+        <span class="drumkit__key-sound">kick</span>
+    </div>
+    <div class="drumkit__key-box" data-key="KeyF">
+        <kbd class="drumkit__key">F</kbd>
+        <span class="drumkit__key-sound">openhat</span>
+    </div>
+    <div class="drumkit__key-box" data-key="KeyG">
+        <kbd class="drumkit__key">G</kbd>
+        <span class="drumkit__key-sound">boom</span>
+    </div>
+    <div class="drumkit__key-box" data-key="KeyH">
+        <kbd class="drumkit__key">H</kbd>
+        <span class="drumkit__key-sound">ride</span>
+    </div>
+    <div class="drumkit__key-box" data-key="KeyJ">
+        <kbd class="drumkit__key">J</kbd>
+        <span class="drumkit__key-sound">snare</span>
+    </div>
+    <div class="drumkit__key-box" data-key="KeyK">
+        <kbd class="drumkit__key">K</kbd>
+        <span class="drumkit__key-sound">tom</span>
+    </div>
+    <div class="drumkit__key-box" data-key="KeyL">
+        <kbd class="drumkit__key">L</kbd>
+        <span class="drumkit__key-sound">tink</span>
+    </div>
+
+    <audio data-key="KeyA" src="sounds/clap.wav"></audio>
+    <audio data-key="KeyS" src="sounds/hihat.wav"></audio>
+    <audio data-key="KeyD" src="sounds/kick.wav"></audio>
+    <audio data-key="KeyF" src="sounds/openhat.wav"></audio>
+    <audio data-key="KeyG" src="sounds/boom.wav"></audio>
+    <audio data-key="KeyH" src="sounds/ride.wav"></audio>
+    <audio data-key="KeyJ" src="sounds/snare.wav"></audio>
+    <audio data-key="KeyK" src="sounds/tom.wav"></audio>
+    <audio data-key="KeyL" src="sounds/tink.wav"></audio>
+</section>
+
+<script type="text/javascript" src="drumkit.js"></script>
+</body>
+</html>
